@@ -1,0 +1,22 @@
+---
+name: RN007 Susceptibles
+description: RN007 Susceptibles
+priority: 1
+condition: "registroDTO.getSusceptibles() != null && !registroDTO.getSusceptibles().isEmpty() ? 
+            (!mx.gob.imss.cit.pmc.commons.utils.Utils.susceptibleUno(registroDTO.getSusceptibles(), registroDTO) &&
+             !mx.gob.imss.cit.pmc.commons.utils.Utils.susceptibleDos(registroDTO.getSusceptibles(), registroDTO, fechaInhabilInicio, fechaInhabilFin)) : 
+             false"
+actions:
+ - "registroDTO.setSusceptibles(null)"
+---
+name: RN009 Susceptibles
+description: RN009 Susceptibles
+priority: 1
+condition: "registroDTO.getSusceptibles() == null && registroDTO.getSusceptiblesNss() != null && !registroDTO.getSusceptiblesNss().isEmpty() ? 
+            (!mx.gob.imss.cit.pmc.commons.utils.Utils.susceptibleTres(registroDTO.getSusceptiblesNss(), registroDTO) &&
+             !mx.gob.imss.cit.pmc.commons.utils.Utils.susceptibleCuatro(registroDTO.getSusceptiblesNss(), registroDTO) && 
+             !mx.gob.imss.cit.pmc.commons.utils.Utils.susceptibleCinco(registroDTO.getSusceptiblesNss(), registroDTO) && 
+             !mx.gob.imss.cit.pmc.commons.utils.Utils.susceptibleRTT(registroDTO.getSusceptiblesNss(), registroDTO) && 
+             !mx.gob.imss.cit.pmc.commons.utils.Utils.susceptibleSeis(registroDTO.getSusceptiblesNss(), registroDTO)) : false"
+actions:
+ - "registroDTO.setSusceptiblesNss(null)"
