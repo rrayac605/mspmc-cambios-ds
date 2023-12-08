@@ -1,0 +1,7 @@
+spring:
+  application:    
+    name: mspmc-validacionlocal
+info: 
+  component: Microservicio de Validaciones Locales    
+    
+    

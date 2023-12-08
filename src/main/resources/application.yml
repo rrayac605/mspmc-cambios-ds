@@ -1,0 +1,21 @@
+server:
+  port: ${portMSCambios}
+  
+spring:
+  data:
+    mongodb:
+      authentication-database: ${authenticationdatabaseMongo}
+      username: ${usrMongoCambios} 
+      password: ${pwdMongoCambios}
+      database: ${databaseMongo}
+      port: ${portMongo}
+      host: ${hostMongo}
+logging:
+  file: ${fileLogCambio}  
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: INFO
+    mx.gob.imss.cit.pmc: DEBUG
+    com.netflix: WARN
